@@ -1,0 +1,50 @@
+.lifestyle-card {
+ background: #151821;/* Dark background from image */
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  padding: 24px;
+  transition: transform 0.2s ease;
+}
+
+.lifestyle-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  color: #ffb800; /* This is the gold/yellow color from the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lifestyle-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.lifestyle-card p {
+  color: #9ca3af; /* Grayish text to match the image description */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* Specific styling for the terminal text */
+.terminal {
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  font-weight: bold;
+  margin: 30px 0 15px 0;
+}

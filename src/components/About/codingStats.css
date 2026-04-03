@@ -1,0 +1,112 @@
+.card {
+  height: 100%;
+  background: #151821;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.card-title {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* CONTAINER */
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* ROW */
+.row {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* TRACK */
+.track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  font-size: 32px;
+  color: #ddd;
+  align-items: center;
+}
+
+/* GROUP */
+.track span {
+  display: flex;
+  gap: 40px;
+}
+
+/* ANIMATIONS */
+.row-left .track {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.row-right .track {
+  animation: scrollRight 30s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* HOVER EFFECT */
+.track svg {
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.track svg:hover {
+  color: #facc15;
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+
+
+
+/* FADE EDGES */
+.icons::before,
+.icons::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+}
+
+.icons::before {
+  left: 0;
+  background: linear-gradient(to right, #151821, transparent);
+}
+
+.icons::after {
+  right: 0;
+  background: linear-gradient(to left, #151821, transparent);
+}

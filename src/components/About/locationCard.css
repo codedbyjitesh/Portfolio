@@ -1,0 +1,87 @@
+.location-card {
+  height: 100%;
+  background: #151821;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-header {
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+}
+
+/* GLOBE */
+.globe {
+  width: 100%;
+  height: 180px;
+  border-radius: 50px;
+  background: radial-gradient(circle at center, #2a2f45, #0f111a);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌍 INDIA DOT PATTERN */
+.globe::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 110px;
+
+  background: radial-gradient(#ffffffaa 1px, transparent 1px);
+  background-size: 8px 8px;
+
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+  <svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'>\
+    <path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/>\
+  </svg>");
+
+  mask-image: url("data:image/svg+xml;utf8,\
+  <svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'>\
+    <path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/>\
+  </svg>");
+
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  opacity: 0.7;
+}
+
+/* 📍 MUMBAI DOT */
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #facc15;
+  border-radius: 50%;
+  position: absolute;
+
+  top: 58%;
+  left: 43%;
+
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+
+  animation: pulse 1.5s infinite;
+}
+
+/* PULSE */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
