@@ -22,22 +22,11 @@ This is my personal portfolio website built using React and Vite.
 ```bash
 npm install
 npm run dev
+```
 
-📧 Contact
-GitHub: https://github.com/codedbyjitesh
-
-
----
-
-## ⚠️ IMPORTANT
-
-After pasting:
-1. Make sure **NO lines like this remain**:
-
+## 📧 Contact
+- GitHub: https://github.com/codedbyjitesh
 
 ---
 
-## ▶️ Then run:
-
-```bash id="cmd1"
-git add .
+⭐ If you like this project, feel free to star it!
