@@ -77,3 +77,60 @@ input:focus, textarea:focus {
 .submit-btn svg {
   stroke-width: 2px;
 }
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px 15px; /* Tighter padding for mobile */
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* Shrink map height so it doesn't take up the whole screen */
+  .map-box iframe {
+    height: 300px !important;
+    border-radius: 15px !important;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  /* CRITICAL: Stack Name and Email inputs vertically */
+  .input-row {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  input, textarea {
+    width: 90%;
+    padding: 12px;
+    font-size: 14px; /* Better font size for mobile inputs */
+  }
+
+  /* Center or full-width the submit button for easier tapping */
+  .form-footer {
+    justify-content: center; /* Center the button on mobile */
+  }
+
+  .submit-btn {
+    width: 100%; /* Make button full width for better UX on phones */
+    justify-content: center;
+    padding: 15px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .map-box iframe {
+    height: 250px !important;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+}

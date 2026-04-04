@@ -99,3 +99,78 @@
 .item-description li {
   margin-bottom: 8px;
 }
+
+/* --- Keep your existing desktop CSS above --- */
+
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 15px 5px; /* Reduce side padding for small screens */
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  /* Download Button: Stack icon and text or wrap text */
+  .download-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+
+  /* Timeline adjustment: reduce left spacing */
+  .timeline {
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+
+  .timeline-dot {
+    left: -25px; /* Adjust dot to stay on the line */
+  }
+
+  /* CRITICAL: Stack Header Meta info */
+  .item-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .item-meta {
+    text-align: left; /* Align to left on mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+  }
+
+  .item-company {
+    font-size: 1rem;
+  }
+
+  .item-title {
+    font-size: 0.9rem;
+  }
+
+  .item-description {
+    font-size: 0.85rem;
+    padding-left: 15px;
+  }
+
+  .category-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small screens (Phones under 480px) */
+@media (max-width: 480px) {
+  .category-header .icon-box {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+  }
+  
+  .category-header h3 {
+    font-size: 1.1rem;
+  }
+}

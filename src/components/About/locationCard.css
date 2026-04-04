@@ -8,15 +8,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid #222;
 }
 
 .location-header {
   font-size: 13px;
   color: #aaa;
   text-align: center;
+  line-height: 1.6;
 }
 
-/* GLOBE */
+/* GLOBE CONTAINER */
 .globe {
   width: 100%;
   height: 180px;
@@ -29,59 +31,89 @@
   justify-content: center;
 }
 
-/* 🌍 INDIA DOT PATTERN */
+/* MAP OVERLAY (MASK) */
 .globe::before {
   content: "";
   position: absolute;
   width: 90px;
   height: 110px;
-
   background: radial-gradient(#ffffffaa 1px, transparent 1px);
   background-size: 8px 8px;
 
-  -webkit-mask-image: url("data:image/svg+xml;utf8,\
-  <svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'>\
-    <path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/>\
-  </svg>");
-
-  mask-image: url("data:image/svg+xml;utf8,\
-  <svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'>\
-    <path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/>\
-  </svg>");
-
+  /* Standard Mask */
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/></svg>");
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
 
-  opacity: 0.7;
+  /* Webkit Support */
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M50 5 L70 20 L80 40 L75 70 L60 100 L40 110 L30 90 L20 70 L25 40 L40 20 Z'/></svg>");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  opacity: 0.5;
 }
 
-/* 📍 MUMBAI DOT */
+/* LOCATION PIN (DOT) */
 .dot {
   width: 8px;
   height: 8px;
   background: #facc15;
   border-radius: 50%;
   position: absolute;
-
-  top: 58%;
-  left: 43%;
-
+  /* Centered for Algeria coordinates on the mask */
+  top: 45%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-
   animation: pulse 1.5s infinite;
+  z-index: 5;
 }
 
-/* PULSE */
+/* PULSE ANIMATION */
 @keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+  .location-card {
+    padding: 15px;
+    min-height: 200px;
+    gap: 10px;
   }
-  50% {
-    transform: translate(-50%, -50%) scale(1.4);
+
+  .location-header {
+    font-size: 12px;
   }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
+
+  .globe {
+    height: 140px;
+    border-radius: 30px;
+  }
+
+  .globe::before {
+    width: 70px;
+    height: 90px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .location-card {
+    padding: 15px;
+    min-height: 180px;
+    width: 90%;
+  }
+  .globe {
+    height: 120px;
   }
 }

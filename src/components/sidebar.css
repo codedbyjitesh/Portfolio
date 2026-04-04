@@ -74,6 +74,7 @@ hr {
 .label {
   font-size: 10px;
   color: gray;
+  text-align: left;
 }
 
 .info-item p {
@@ -82,19 +83,19 @@ hr {
 }
 
 /* FOOTER */
-.footer {
+.footer-socials {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 10px;
 }
 
-.footer svg {
+.footer-socials svg {
   cursor: pointer;
   color: #aaa;
 }
 
-.footer svg:hover {
+.footer-socials svg:hover {
   color: #facc15;
 }
 
@@ -178,14 +179,87 @@ hr {
   color: white;
 }
 
-/* Smooth zoom animation */
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
+/* PC Sidebar is normal. Mobile Close btn is hidden by default. */
+.close-sidebar-btn { display: none; }
+.sidebar-overlay { display: none; }
+
+@media (max-width: 768px) {
+  /* 1. Backdrop Overlay */
+  .sidebar-overlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  /* 2. The Sidebar Drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    height: 100vh;
+    width: 280px;
+    z-index: 999;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 20px 20px 0;
+    background: #111318;
+    border: none;
+    border-right: 1px solid #222;
+
+    /* FIX: Enable scrolling and add bottom clearance for Navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Prevents awkward stretching */
+    overflow-y: auto; 
+    padding: 60px 20px 120px 20px; /* Large bottom padding for copyright visibility */
+  }
+
+  /* Show sidebar when state is active */
+  .sidebar.mobile-show {
+    left: 0;
+  }
+
+  /* 3. Mobile Close Button */
+  .close-sidebar-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #1c1f26;
+    border: 1px solid #383838;
+    color: #facc15;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 10px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  /* 4. Copyright & Socials Visibility Fix */
+  .footer-socials {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+  }
+
+  .copyright {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    display: block !important; /* Ensure it's forced visible */
+  }
+
+  /* Optional: Adjust profile size for mobile height */
+  .profile img {
+    width: 100px;
+    height: 100px;
   }
 }

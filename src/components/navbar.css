@@ -16,3 +16,53 @@
   color: #facc15;
   border-bottom: 2px solid #facc15;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    /* 1. Fix to bottom of the screen */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    
+    /* 2. Reset PC positioning */
+    margin-bottom: 0px;
+    align-self: center;
+    border-radius: 20px 20px 0 0; /* Rounded top corners */
+    
+    /* 3. Modern Glassmorphism Effect */
+    background: rgba(18, 18, 21, 0.95); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* 4. Layout: Spread buttons evenly */
+    justify-content: space-around; 
+    gap: 0;
+    padding: 13px 12px;
+    z-index: 1000;
+    border: none;
+    border-top: 1px solid #383838;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar button {
+    font-size: 13px;
+    flex: 1; /* Each button takes equal space */
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove the PC underline to keep mobile UI clean */
+  .navbar .active::after {
+    display: none;
+  }
+
+  /* Subtle lift effect for the active tab */
+  .navbar .active {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+    border-bottom: none; /* Removing the border-bottom from PC */
+  }
+}

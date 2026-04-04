@@ -1,7 +1,7 @@
 import "./navbar.css";
 
 export default function Navbar({ activeTab, setActiveTab }) {
-  const tabs = ["About", "Resume", "Portfolio", "Contact"];
+  const tabs = ["About", "Resume", "Projects", "Contact"];
 
   return (
     <div className="navbar">

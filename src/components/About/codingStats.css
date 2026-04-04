@@ -110,3 +110,44 @@
   right: 0;
   background: linear-gradient(to left, #151821, transparent);
 }
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+    width: 90%;/* Slightly tighter padding */
+    min-height: 180px; /* Ensure it has enough height for the two rows */
+  }
+
+  .card-title {
+    font-size: 13px;
+    margin-bottom: 25px; /* More breathing room below title */
+  }
+
+  .icons {
+    gap: 25px; /* Reduce vertical gap between scrolling rows */
+  }
+
+  .track {
+    font-size: 26px; /* Shrink icons slightly for mobile view */
+    gap: 30px;      /* Reduce horizontal gap between icons */
+  }
+
+  /* Sync the span gap with the track gap */
+  .track span {
+    gap: 30px;
+  }
+
+  /* Fade Edges: Make the gradient smaller on mobile so more icons are visible */
+  .icons::before,
+  .icons::after {
+    width: 30px;
+  }
+
+  /* Optional: Speed up the animation slightly for mobile 
+     since the distance is smaller and slow scrolls can look laggy */
+  .row-left .track,
+  .row-right .track {
+    animation-duration: 20s;
+  }
+}

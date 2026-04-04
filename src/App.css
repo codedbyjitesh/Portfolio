@@ -21,3 +21,32 @@ body {
   gap: 25px;
   overflow-x: hidden; /* 🔥 prevents weird duplication */
 }
+/* Hamburger Button: Hidden on Desktop */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 0px;
+  z-index: 100;
+  background: #1e1e26;
+  border: 1px solid #383838;
+  color: #facc15;
+  padding: 12px;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block; }
+  .app { padding: 5px; flex-direction: column; }
+  .main { padding: 5px; }
+}
+
+@media (max-width: 768px) {
+  /* Adds space at the bottom of the main content 
+     so the Navbar doesn't hide anything */
+  .main {
+    padding-bottom: 80px; 
+  }
+}

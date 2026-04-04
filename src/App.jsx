@@ -2,25 +2,33 @@ import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact"; // Create this next
-import Resume from "./components/Resume/Resume"; // Create this next
+import Contact from "./components/Contact/Contact";
+import Resume from "./components/Resume/Resume";
+import { FaBars } from "react-icons/fa"; // Install react-icons if you haven't
 import "./App.css";
 
 function App() {
-  // 1. Create state to track the active section
   const [activeTab, setActiveTab] = useState("About");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className="app">
-      <Sidebar />
+      {/* Mobile Menu Button */}
+      <button className="mobile-menu-btn" onClick={() => setIsSidebarOpen(true)}>
+        <FaBars />
+      </button>
+
+      {/* Sidebar with mobile props */}
+      <Sidebar isMobileOpen={isSidebarOpen} closeSidebar={() => setIsSidebarOpen(false)} />
+      
       <div className="main">
-        {/* 2. Pass activeTab and setter to Navbar */}
         <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
         
-        {/* 3. Conditional Rendering based on state */}
-        {activeTab === "About" && <About />}
-        {activeTab === "Contact" && <Contact />}
-        {activeTab === "Resume" && <Resume />}
+        <div className="content">
+          {activeTab === "About" && <About />}
+          {activeTab === "Contact" && <Contact />}
+          {activeTab === "Resume" && <Resume />}
+        </div>
       </div>
     </div>
   );
