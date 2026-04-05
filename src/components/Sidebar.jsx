@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./sidebar.css";
-import { 
-  FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, 
-  FaTimes, FaTwitter, FaInstagram 
+import {
+  FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin,
+  FaTimes, FaTwitter, FaInstagram
 } from "react-icons/fa";
 
 export default function Sidebar({ isMobileOpen, closeSidebar }) {
@@ -12,14 +12,14 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
   return (
     <>
       {/* 1. Backdrop for mobile */}
-      <div 
-        className={`sidebar-overlay ${isMobileOpen ? "active" : ""}`} 
+      <div
+        className={`sidebar-overlay ${isMobileOpen ? "active" : ""}`}
         onClick={closeSidebar}
       ></div>
 
       {/* 2. Sidebar Container */}
       <div className={`sidebar ${isMobileOpen ? "mobile-show" : ""}`}>
-        
+
         {/* Mobile Close Button */}
         <button className="close-sidebar-btn" onClick={closeSidebar}>
           <FaTimes />
@@ -32,7 +32,7 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
             className="clickable-img"
             onClick={() => setIsImgModalOpen(true)}
           />
-          <h2>HAMZAOUI Amine</h2>
+          <h2>JITESH Bind</h2>
           <span className="badge">Full stack developer</span>
         </div>
 
@@ -43,7 +43,7 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
             <div className="icon-box"><FaMapMarkerAlt /></div>
             <div>
               <p className="label">LOCATION</p>
-              <p>Algeria</p>
+              <p>India</p>
             </div>
           </div>
 
@@ -51,7 +51,7 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
             <div className="icon-box"><FaEnvelope /></div>
             <div>
               <p className="label">EMAIL</p>
-              <p title="aminehamzaoui1925@gmail.com">aminehamzaoui1925...</p>
+              <p title="priyabind@gmail.com">priyabind106@gmail.com...</p>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
             <div className="icon-box"><FaGithub /></div>
             <div>
               <p className="label">GITHUB</p>
-              <p>sabo</p>
+              <p>codedbyjitesh</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
             <div className="icon-box"><FaLinkedin /></div>
             <div>
               <p className="label">LINKEDIN</p>
-              <p>HAMZAOUI Amine</p>
+              <p>(not available )</p>
             </div>
           </div>
         </div>
@@ -75,14 +75,24 @@ export default function Sidebar({ isMobileOpen, closeSidebar }) {
         <hr />
 
         <div className="footer-socials">
-          <FaGithub className="social-icon" />
-          <FaLinkedin className="social-icon" />
-          <FaInstagram className="social-icon" />
-          <FaTwitter className="social-icon" />
-          <FaEnvelope className="social-icon" />
+          <a href="https://github.com/codedbyjitesh" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="social-icon" />
+          </a>
+
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="social-icon" />
+          </a>
+
+          <a href="https://instagram.com/kiddo_luci" target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="social-icon" />
+          </a>
+
+          <a href="mailto:priyabind106@gmail.com">
+            <FaEnvelope className="social-icon" />
+          </a>
         </div>
-        
-        <p className="copyright">© 2024 <span>sabo</span></p>
+
+        <p className="copyright">© 2026 <span>sabo</span></p>
 
         {/* Image Modal Logic */}
         {isImgModalOpen && (

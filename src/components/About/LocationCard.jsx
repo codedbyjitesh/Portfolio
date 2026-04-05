@@ -3,8 +3,8 @@ export default function LocationCard() {
     return (
         <div className="location-card">
             <div className="location-header">
-                📍 Algeria <br />
-                (UTC +01:00)
+                📍 India <br />
+                (UTC +05:30)
             </div>
 
             <div className="globe">

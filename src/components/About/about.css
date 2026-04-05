@@ -24,11 +24,8 @@
 
 /* TERMINAL */
 .terminal {
-  font-family: monospace;
-  color: #aaa;
-  margin: 15px 0;
+  font-family: "JetBrains Mono", monospace !important;
 }
-
 /* TEXT */
 .about p {
   font-size: 14px;

@@ -1,6 +1,6 @@
 import "./codingStats.css";
-import { FaLinux, FaPython, FaNodeJs } from "react-icons/fa";
-import { SiCplusplus, SiTypescript, SiPhp, SiTensorflow } from "react-icons/si";
+import { FaLinux, FaPython, FaNodeJs, FaReact } from "react-icons/fa";
+import { SiTypescript, SiPhp, SiMongodb, SiExpress, SiMysql } from "react-icons/si";
 
 export default function CodingStats() {
   return (
@@ -14,13 +14,14 @@ export default function CodingStats() {
           <div className="track">
             {[...Array(3)].map((_, i) => (
               <span key={i}>
-                <SiCplusplus />
-                <SiPhp />
-                <SiTypescript />
-                <FaLinux />
-                <FaPython />
-                <SiTensorflow />
+                <FaReact />
                 <FaNodeJs />
+                <SiExpress />
+                <SiMongodb />
+                <SiMysql />
+                <FaPython />
+                <SiPhp />
+                <FaLinux />
               </span>
             ))}
           </div>
@@ -31,13 +32,14 @@ export default function CodingStats() {
           <div className="track">
             {[...Array(3)].map((_, i) => (
               <span key={i}>
-                <FaNodeJs />
-                <SiTensorflow />
-                <FaPython />
                 <FaLinux />
-                <SiTypescript />
                 <SiPhp />
-                <SiCplusplus />
+                <FaPython />
+                <SiMysql />
+                <SiMongodb />
+                <SiExpress />
+                <FaNodeJs />
+                <FaReact />
               </span>
             ))}
           </div>
