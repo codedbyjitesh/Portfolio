@@ -33,9 +33,13 @@ const Resume = () => {
       <div className="title-underline"></div>
 
       {/* Download Button */}
-      <a className="download-btn disabled">
+      <a
+        href="/Resume_Jitesh_Bind.pdf"
+        download="Resume_Jitesh_Bind.pdf"
+        className="download-btn"
+      >
         <div className="icon-box-small"><Download size={18} /></div>
-        <span>Resume coming soon...</span>
+        <span>Download Resume</span>
       </a>
 
       {/* Education */}
