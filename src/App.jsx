@@ -6,6 +6,7 @@ import Contact from "./components/Contact/Contact";
 import Resume from "./components/Resume/Resume";
 import { FaBars } from "react-icons/fa"; // Install react-icons if you haven't
 import "./App.css";
+import Project from "./components/Project/Project";
 
 function App() {
   const [activeTab, setActiveTab] = useState("About");
@@ -28,6 +29,7 @@ function App() {
           {activeTab === "About" && <About />}
           {activeTab === "Contact" && <Contact />}
           {activeTab === "Resume" && <Resume />}
+          {activeTab === "Projects" && <Project/>}
         </div>
       </div>
     </div>
