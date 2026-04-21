@@ -49,24 +49,24 @@ export default function About() {
       {/* Description */}
       <div className="description-section">
         <p>
-          Hi, I'm <span className="highlight">JITESh Bind</span>, a MERN Stack
-          Developer passionate about building modern, responsive, and user-friendly
+          Hi, I'm <span className="highlight">Jitesh Bind</span>, a Full Stack 
+          Developer passionate about building modern, responsive, and user-friendly 
           web applications 🚀. I enjoy turning ideas into functional products and 
           continuously improving my problem-solving skills.
         </p>
 
         <p>
-          With experience in JavaScript, React, Node.js, and databases like MongoDB 
-          and MySQL 🗄️, along with basic knowledge of Python 🐍, I’m focused on growing
-          as a full stack developer and exploring scalable backend systems.
+          With experience in JavaScript and Python, I specialize in the 
+          <strong> MERN Stack</strong> and <strong>Django</strong> 🌐. By leveraging tools 
+          like React, Node.js, and databases such as MongoDB and MySQL 🗄️, 
+          I’m focused on building scalable backend systems and seamless user experiences.
         </p>
 
         <p>
           I’m a self-motivated learner 📚, a team player 🤝, and someone who genuinely 
-          enjoys coding and building projects 👨‍💻.
+          enjoys coding and building impactful projects 👨‍💻.
         </p>
       </div>
-
       <p className="highlight-line">
         Outside of development, I enjoy basketball 🏀, gaming 🎮, and photography 📷.
       </p>

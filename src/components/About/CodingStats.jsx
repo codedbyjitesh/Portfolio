@@ -1,6 +1,6 @@
 import "./codingStats.css";
 import { FaLinux, FaPython, FaNodeJs, FaReact } from "react-icons/fa";
-import { SiTypescript, SiPhp, SiMongodb, SiExpress, SiMysql } from "react-icons/si";
+import { SiTypescript, SiPhp, SiMongodb, SiExpress, SiMysql, SiDjango } from "react-icons/si";
 
 export default function CodingStats() {
   return (
@@ -20,6 +20,7 @@ export default function CodingStats() {
                 <SiMongodb />
                 <SiMysql />
                 <FaPython />
+                <SiDjango/>
                 <SiPhp />
                 <FaLinux />
               </span>
@@ -34,6 +35,7 @@ export default function CodingStats() {
               <span key={i}>
                 <FaLinux />
                 <SiPhp />
+                <SiDjango />
                 <FaPython />
                 <SiMysql />
                 <SiMongodb />
