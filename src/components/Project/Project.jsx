@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Project.css";
 import { FaEye, FaGamepad, FaRobot, FaCode, FaMobileAlt } from "react-icons/fa";
 import ResumeImage from "../../assets/Resume.png"; // Import your actual image
+import Todo from "../../assets/Todo.png"; // Import your actual image
 const projects = [
   {
     id: 1,
@@ -11,7 +12,14 @@ const projects = [
     icon: <FaCode />,
     link:"https://resume-liard-theta.vercel.app/"
   },
-  
+  {
+    id: 2,
+    title: "Todo App",
+    category: "Web Development",
+    image: Todo,
+    icon: <FaCode />,
+    link:"https://todo-frontend-f9gq.vercel.app/"
+  },
   // Add more projects based on your screenshots...
 ];
 
