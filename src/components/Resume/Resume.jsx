@@ -35,7 +35,7 @@ const Resume = () => {
       {/* Download Button */}
       <a
         href="/Resume_Jitesh_Bind.pdf"
-        download="Resume_Jitesh_Bind.pdf"
+        download="JITESH_BIND.pdf"
         className="download-btn"
       >
         <div className="icon-box-small"><Download size={18} /></div>
